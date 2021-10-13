@@ -14,19 +14,34 @@ KEY FEATURES
 
 TECHNICAL REQUIREMENTS
 
-●The app ​must​be a React application0.
+●The app ​must​be a React application.
+
 ●The app ​must​be built using the TDD technique.
+
 ●The app ​must​ use the Google Calendar API and OAuth2 authentication flow.
+
 ●The app ​must​use serverless functions (AWS lambda is preferred) for the authorizationserver instead of using a traditional server.
+
 ●The app’s code ​must​be hosted in a Git repository on GitHub.
+
 ●The app ​must​work on the latest versions of Chrome, Firefox, Safari, Edge, and Opera,as well as on IE11.
+
 ●The app ​must​display well on all screen sizes (including mobile and tablet) widths of1920px and 320px.
+
 ●The app ​must​ pass ​Lighthouse​’s PWA checklist.
+
 ●The app ​must​ work offline or in slow network conditions with the help of a serviceworker.
+
 ●Users ​may​ be able to install the app on desktop and add the app to their home screenon mobile.
+
 ●The app ​must​ be deployed on GitHub Pages.
-●The API call ​must​ use React axios and async/await.●The app ​must​ implement an alert system using an OOP approach to show information tothe user.
+
+●The API call ​must​ use React axios and async/await.
+
+●The app ​must​ implement an alert system using an OOP approach to show information tothe user.
+
 ●The app ​must​ make use of data visualization (recharts preferred).
+
 ●The app ​must​ be covered by tests with a coverage rate >= 90%.●The app ​must​ be monitored using an online monitoring tool.
 
 
