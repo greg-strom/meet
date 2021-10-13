@@ -42,7 +42,9 @@ TECHNICAL REQUIREMENTS
 
 ●The app ​must​ make use of data visualization (recharts preferred).
 
-●The app ​must​ be covered by tests with a coverage rate >= 90%.●The app ​must​ be monitored using an online monitoring tool.
+●The app ​must​ be covered by tests with a coverage rate >= 90%.
+
+●The app ​must​ be monitored using an online monitoring tool.
 
 
 
