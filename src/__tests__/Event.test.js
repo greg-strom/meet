@@ -27,12 +27,35 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find(".displayMore")).toHaveLength(1);
   });
 
-  test("change display state on click", () => {
+  test("Change display state on click", () => {
     EventWrapper.setState({
       display: false,
     });
     EventWrapper.find(".displayMore").simulate("click");
     expect(EventWrapper.state("display")).toEqual(true);
+  });
+
+  test("Description not shown when display state is false", () => {
+    EventWrapper.setState({
+      display: false,
+    });
+    expect(EventWrapper.find(".EventDescription")).toHaveLength(0);
+  });
+
+  test("Display description on click", () => {
+    EventWrapper.setState({
+      display: false,
+    });
+    EventWrapper.find(".displayMore").simulate("click");
+    expect(EventWrapper.find(".EventDescription")).toHaveLength(1);
+  });
+
+  test("Hide description on click", () => {
+    EventWrapper.setState({
+      display: true,
+    });
+    EventWrapper.find(".displayLess").simulate("click");
+    expect(EventWrapper.find(".EventDescription")).toHaveLength(0);
   });
 
 });
