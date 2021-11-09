@@ -23,4 +23,16 @@ describe('<Event /> component', () => {
     expect(EventWrapper.find(".EventTime")).toHaveLength(1);
   });
 
+  test("Display more button is rendered", () => {
+    expect(EventWrapper.find(".displayMore")).toHaveLength(1);
+  });
+
+  test("change display state on click", () => {
+    EventWrapper.setState({
+      display: false,
+    });
+    EventWrapper.find(".displayMore").simulate("click");
+    expect(EventWrapper.state("display")).toEqual(true);
+  });
+
 });
