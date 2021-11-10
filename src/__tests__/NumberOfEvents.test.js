@@ -12,4 +12,18 @@ describe("<NumberOfEvents /> component", () => {
     expect(NumberOfEventsWrapper.find(".EventsNumberTextbox")).toHaveLength(1);
   });
 
+  test('initial number of events is 32', () => {
+    expect(NumberOfEventsWrapper.state('numberOfEvents')).toEqual(32);
+  });
+
+  test('change value of numberOfEvents in the state when new value is entered', () => {
+    NumberOfEventsWrapper.setState({
+      numberOfEvents: 32
+    });
+    const eventObject = { target: { value: 50 }};
+    NumberOfEventsWrapper.find('.EventsNumberTextbox').simulate('change', eventObject);
+    expect(NumberOfEventsWrapper.state('numberOfEvents')).toEqual(50);
+  });
+
+
 });
