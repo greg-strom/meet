@@ -35,6 +35,20 @@ import NProgress from 'nprogress';
       return mockData;
     }
 
+    const removeQuery = () => {
+      if (window.history.pushState && window.location.pathname) {
+        var newurl =
+          window.location.protocol +
+          "//" +
+          window.location.host +
+          window.location.pathname;
+        window.history.pushState("", "", newurl);
+      } else {
+        newurl = window.location.protocol + "//" + window.location.host;
+        window.history.pushState("", "", newurl);
+      }
+    };
+
     const token = await getAccessToken();
   
     if (token) {
@@ -50,6 +64,7 @@ import NProgress from 'nprogress';
       return result.data.events;
     }
   };
+
   export const getAccessToken = async () => {
     const accessToken = localStorage.getItem('access_token');
     const tokenCheck = accessToken && (await checkToken(accessToken));
@@ -68,4 +83,5 @@ import NProgress from 'nprogress';
       return code && getToken(code);
     }
     return accessToken;
+
   }
