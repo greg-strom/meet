@@ -19,3 +19,7 @@ import axios from 'axios';
   export const getEvents = async () => {
     return mockData;
   };
+
+  export const getAccessToken = async () => {
+
+  }
