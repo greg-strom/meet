@@ -76,11 +76,11 @@ describe('<App /> integration', () => {
     AppWrapper.unmount();
   });
 
-  test('numberOfEvents in EventList is equal to numberOfEvents in the NumberOfEvents state', () => {
+  test('number of events in EventList is equal to numberOfEvents in the NumberOfEvents state', () => {
     const AppWrapper = mount(<App />);
     const AppNumberOfEventsState = AppWrapper.state('numberOfEvents');
     expect(AppNumberOfEventsState).not.toEqual(undefined);
-    expect(AppWrapper.find(EventList).props().numberOfEvents).toEqual(AppNumberOfEventsState);
+    expect(AppWrapper.find(EventList).props().events.length).toEqual(AppNumberOfEventsState);
     AppWrapper.unmount();
   });
 
