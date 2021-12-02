@@ -76,34 +76,4 @@ describe('<App /> integration', () => {
     AppWrapper.unmount();
   });
 
-  test('number of events in the events state when user selects "See All Cities" is less than or equal to chosen numberOfEvents', async () => {
-    const AppWrapper = mount(<App />);
-    const suggestionItems = AppWrapper.find(CitySearch).find('.suggestions li');
-    await suggestionItems.at(suggestionItems.length - 1).simulate('click');
-    const eventObject = { target: { value: 1 }};
-    await AppWrapper.find('.EventsNumberTextbox').simulate('change', eventObject);
-    const AppNumberOfEventsState = AppWrapper.state('numberOfEvents');
-    expect(AppNumberOfEventsState).not.toEqual(undefined);
-    expect(AppWrapper.state('events').length).toBeLessThan(AppNumberOfEventsState + 1);
-    AppWrapper.unmount();
-  });
-
-  test('number of events in the events state when user selects a city is less than or equal to chosen numberOfEvents', async () => {
-    const AppWrapper = mount(<App />);
-    const CitySearchWrapper = AppWrapper.find(CitySearch);
-    const locations = extractLocations(mockData);
-    CitySearchWrapper.setState({ suggestions: locations });
-    const suggestions = CitySearchWrapper.state('suggestions');
-    const selectedIndex = Math.floor(Math.random() * (suggestions.length));
-    const selectedCity = suggestions[selectedIndex];
-    await CitySearchWrapper.instance().handleItemClicked(selectedCity);
-    const eventObject = { target: { value: 1 }};
-    await AppWrapper.find('.EventsNumberTextbox').simulate('change', eventObject);
-    const AppNumberOfEventsState = AppWrapper.state('numberOfEvents');
-    expect(AppNumberOfEventsState).not.toEqual(undefined);
-    expect(AppWrapper.state('events').length).toBeLessThan(AppNumberOfEventsState);
-    AppWrapper.unmount();
-  });
-
-
 });
