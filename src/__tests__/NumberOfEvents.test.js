@@ -16,7 +16,7 @@ describe("<NumberOfEvents /> component", () => {
     expect(NumberOfEventsWrapper.state('numberOfEvents')).toEqual(32);
   });
 
-  test('change value of numberOfEvents in the state when new value is entered', () => {
+  test('change the value of numberOfEvents in the state when new value is entered', () => {
     NumberOfEventsWrapper.setState({
       numberOfEvents: 32
     });
