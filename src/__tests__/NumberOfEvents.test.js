@@ -1,29 +1,27 @@
 import React from "react";
-import { shallow } from "enzyme";
+import App from "../App";
+import { shallow, mount } from "enzyme";
 import NumberOfEvents from "../NumberOfEvents";
 
 describe("<NumberOfEvents /> component", () => {
   let NumberOfEventsWrapper;
   beforeAll(() => {
-    NumberOfEventsWrapper = shallow(<NumberOfEvents />);
+    NumberOfEventsWrapper = mount(<NumberOfEvents />);
   });
   
   test("textbox is rendered", () => {
     expect(NumberOfEventsWrapper.find(".EventsNumberTextbox")).toHaveLength(1);
   });
 
-  test('initial number of events is 32', () => {
-    expect(NumberOfEventsWrapper.state('numberOfEvents')).toEqual(32);
+  // test('initial number of events is 32', () => {
+  //   expect(NumberOfEventsWrapper.state('numberOfEvents')).toEqual(32);
+  // });
+
+  test('change the value of numberOfEvents in the state when new value is entered', async () => {
+    const AppWrapper = mount(<App />);
+    const eventObject = { target: { value: 1 }};
+    await AppWrapper.find('.EventsNumberTextbox').simulate('change', eventObject);
+    expect(AppWrapper.state('numberOfEvents')).toBe(1);
+    AppWrapper.unmount();
   });
-
-  test('change the value of numberOfEvents in the state when new value is entered', () => {
-    NumberOfEventsWrapper.setState({
-      numberOfEvents: 32
-    });
-    const eventObject = { target: { value: 50 }};
-    NumberOfEventsWrapper.find('.EventsNumberTextbox').simulate('change', eventObject);
-    expect(NumberOfEventsWrapper.state('numberOfEvents')).toEqual(50);
-  });
-
-
 });

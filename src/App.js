@@ -4,12 +4,14 @@ import EventList from './EventList';
 import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
+import { getAllByAltText } from '@testing-library/dom';
 
 class App extends Component {
   state = {
     events: [],
     locations: [],
-    numberOfEvents: 32
+    numberOfEvents: 32,
+    currentLocation: "all"
   }
 
   componentDidMount() {
@@ -31,6 +33,7 @@ class App extends Component {
         events :
         events.filter((event) => event.location === location);
       locationEvents = locationEvents.slice(0, eventCount);
+      console.log(locationEvents);
       this.setState({
         events: locationEvents
       });
