@@ -1,6 +1,8 @@
 import { loadFeature, defineFeature } from 'jest-cucumber';
+import React from 'react';
+import { mount } from 'enzyme';
 import App from '../App';
-import { mount } from "enzyme";
+import { mockData } from '../mock-data';
 
 const feature = loadFeature('./src/features/filterEventsByCity.feature');
 
@@ -16,8 +18,9 @@ defineFeature(feature, test => {
         });
 
         then('the user should see the list of upcoming events.', () => {
-
-        });
+            AppWrapper.update();
+            expect(AppWrapper.find('.event')).toHaveLength(mockData.length);
+          });
     });
 
     test('User should see a list of suggestions when they search for a city', ({ given, when, then }) => {
