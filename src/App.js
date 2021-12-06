@@ -33,7 +33,6 @@ class App extends Component {
         events :
         events.filter((event) => event.location === location);
       locationEvents = locationEvents.slice(0, eventCount);
-      console.log(locationEvents);
       this.setState({
         events: locationEvents
       });
