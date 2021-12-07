@@ -25,6 +25,10 @@ describe('<App /> component', () => {
   test('render number of events', () => {
     expect(AppWrapper.find(NumberOfEvents)).toHaveLength(1);
   })
+
+  test('initial number of events is 32', () => {
+    expect(AppWrapper.state('numberOfEvents')).toEqual(32);
+  });
 });
 
 describe('<App /> integration', () => {
