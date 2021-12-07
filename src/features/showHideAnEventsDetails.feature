@@ -12,5 +12,5 @@ Then the selected event will expand to display more details
 
 Scenario: User can collapse an event to hide its details
 Given the app has displayed extra details for a particular event
-When the user navigates back to the app main page
+When the user selects the display less button
 Then the selected event will collapse to display the main page
