@@ -11,7 +11,7 @@ class NumberOfEvents extends Component {
     this.props.updateNumberOfEvents(value);
     if (!(value > 0 && value < 65)) {
       this.setState({
-        errorText: 'Please enter a number between 1 and 64',
+        errorText: 'Please enter a number between 1 and 64.',
       });
     } else {
       return this.setState({
@@ -23,14 +23,18 @@ class NumberOfEvents extends Component {
 
   render() {
     return (
-      <div className="numberOfEvents">
-        <input
-          type="text"
-          className="EventsNumberTextbox"
-          value={this.props.numberOfEvents}
-          onChange={(e) => this.handleNumberOfEventsChange(e)}
-        />
-        <ErrorAlert text={this.state.errorText} />
+      <div>
+        <div className="numberOfEvents">
+          <input
+            type="text"
+            className="EventsNumberTextbox"
+            value={this.props.numberOfEvents}
+            onChange={(e) => this.handleNumberOfEventsChange(e)}
+          />
+        </div>
+        <div className="numberOfEventsError">
+          <ErrorAlert text={this.state.errorText} />
+        </div>
       </div>
     );
   }

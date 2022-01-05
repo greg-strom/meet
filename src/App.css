@@ -49,6 +49,26 @@ input[type="number"] {
   position: relative;
 }
 
+.citySearchAlert {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 40%;
+  font-size: 20px;
+  text-align: center;
+  margin: auto;
+}
+
+.numberOfEventsError {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40%;
+  font-size: 20px;
+  text-align: center;
+  margin: auto;
+}
+
 .suggestions {
   width: 250px;
   position: absolute;
