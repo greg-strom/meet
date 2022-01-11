@@ -40,6 +40,13 @@ input[type="number"] {
   width: 250px;
 }
 
+.input-boxes {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
+
 .CitySearch {
   display: flex;
   flex-direction: column;
@@ -50,23 +57,24 @@ input[type="number"] {
 }
 
 .citySearchAlert {
-  position: fixed;
-  top: 0;
-  right: 0;
+  /* position: fixed; */
+  /* top: 0; */
+  /* right: 0; */
   width: 40%;
   font-size: 20px;
   text-align: center;
   margin: auto;
+  margin-top: 40px;
 }
 
 .numberOfEventsError {
-  position: fixed;
-  top: 0;
-  left: 0;
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 0; */
   width: 40%;
   font-size: 20px;
   text-align: center;
-  margin: auto;
+  margin-left: 10px;
 }
 
 .suggestions {
@@ -136,7 +144,6 @@ input[type="number"] {
 
 .numberOfEvents {
   width: 200px;
-  margin: 20px auto;
   text-align: center;
 }
 
@@ -149,7 +156,6 @@ input[type="number"] {
 }
 
 .Alert {
-  position: fixed;
   top: 20px;
 }
 
