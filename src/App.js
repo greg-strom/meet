@@ -5,7 +5,7 @@ import CitySearch from './CitySearch';
 import NumberOfEvents from './NumberOfEvents';
 import { getEvents, extractLocations } from './api';
 import {
-  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip
+  ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
 } from 'recharts';
 // import { getAllByAltText } from '@testing-library/dom';
 
