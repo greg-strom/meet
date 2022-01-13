@@ -25,12 +25,15 @@ class NumberOfEvents extends Component {
     return (
       <div>
         <div className="numberOfEvents">
-          <input
-            type="text"
-            className="EventsNumberTextbox"
-            value={this.props.numberOfEvents}
-            onChange={(e) => this.handleNumberOfEventsChange(e)}
-          />
+          <label>
+            <span>Show:</span>
+            <input
+              type="text"
+              className="EventsNumberTextbox"
+              value={this.props.numberOfEvents}
+              onChange={(e) => this.handleNumberOfEventsChange(e)}
+            />
+          </label>
         </div>
         <div className="numberOfEventsError">
           <ErrorAlert text={this.state.errorText} />
